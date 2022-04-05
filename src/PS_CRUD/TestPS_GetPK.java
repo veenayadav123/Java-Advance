@@ -9,7 +9,7 @@ public class TestPS_GetPK {
 
 	public static void main(String[] args) throws Exception {
 
-		testGet(4);
+		testGet(5);
 	}
 
 	public static void testGet(int PK) throws Exception {

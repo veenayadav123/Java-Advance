@@ -17,7 +17,7 @@ public class TestPS_GetPK1 {
 		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays","root","root");
 		
-		int id=2;
+		int id=4;
 		
 		PreparedStatement ps = conn.prepareStatement("SELECT * FROM EMPLOYEE WHERE ID=?");
 		

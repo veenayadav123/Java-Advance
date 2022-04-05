@@ -16,7 +16,7 @@ public class TestPS_Delete {
 		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays","root","root");
 	
-		int id=9;
+		int id=14;
 		
         PreparedStatement ps = conn.prepareStatement("DELETE FROM EMPLOYEE WHERE ID=?");
         

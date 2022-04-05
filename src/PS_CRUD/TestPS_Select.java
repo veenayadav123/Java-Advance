@@ -24,12 +24,14 @@ public class TestPS_Select {
 		
 		while(rs.next()) {
 			
-			System.out.print(rs.getString(1));
+			System.out.print(rs.getInt(1));
 			System.out.print("\t"+rs.getString(2));
             System.out.print("\t"+rs.getString(3));
             System.out.print("\t"+rs.getString(4));
             System.out.println("\t"+rs.getString(5));
 		}
+		conn.close();
+		ps.close();
 		}
 	}
 
