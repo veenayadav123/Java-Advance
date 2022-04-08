@@ -18,7 +18,7 @@ public class Add_ {
 		
 		Statement stmt = conn.createStatement();
 		
-		int i = stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(10,'DIYA','PATIDAR',5000,4)");
+		int i = stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(102,'DIYA','PATIDAR',5000,4)");
 		
 		System.out.println(i+"  Inserted");
 		

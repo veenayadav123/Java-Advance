@@ -23,9 +23,9 @@ public class Test_Add1 {
 
 		try {
 
-			int i = stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(23,'RIYA','VERMA',20000,4)");
-			stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(24,'RIYA','VERMA',20000,4)");
-			stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(24,'RIYA','VERMA',20000,4)");
+			int i = stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(32,'RIYA','VERMA',20000,4)");
+			stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(33,'RIYA','VERMA',20000,4)");
+			stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(32,'RIYA','VERMA',20000,4)");
 			conn.commit();
 
 		} catch (Exception e) {

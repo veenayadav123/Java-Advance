@@ -20,9 +20,9 @@ public class Test_Add {
 	    
 	    Statement stmt = conn.createStatement();
 	    
-	    int i= stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(31,'RIYA','VERMA',20000,4)");
-	           stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(32,'RIYA','VERMA',20000,4)");
-	           stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(32,'RIYA','VERMA',20000,4)");
+	    int i= stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(35,'RIYA','VERMA',20000,4)");
+	           stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(36,'RIYA','VERMA',20000,4)");
+	           stmt.executeUpdate("INSERT INTO EMPLOYEE VALUES(35,'RIYA','VERMA',20000,4)");
 	        
 	        conn.commit();
 	        System.out.println(i+"Inserted");

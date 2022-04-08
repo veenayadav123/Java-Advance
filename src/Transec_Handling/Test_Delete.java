@@ -19,16 +19,22 @@ public class Test_Delete {
 
 		conn.setAutoCommit(false);
 
-		int id = 10;
-		PreparedStatement ps = conn.prepareStatement("DELETE FROM EMPLOYEE WHERE ID=?");
-		ps.setInt(1, id);
+		int id = 28;
+		try {
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM EMPLOYEE WHERE ID=?");
+			ps.setInt(1, id);
 
-		int i = ps.executeUpdate();
-		conn.commit();
-		System.out.println(i + " Deleted ");
+			int i = ps.executeUpdate();
+			System.out.println(i + " Deleted ");
+			conn.commit();
+			ps.close();
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			// e.printStackTrace();
+			conn.rollback();
+		}
 
 		conn.close();
-		ps.close();
 	}
-
 }
