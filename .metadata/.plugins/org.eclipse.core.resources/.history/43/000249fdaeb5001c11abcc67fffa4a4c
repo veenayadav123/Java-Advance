@@ -1,0 +1,23 @@
+package Marksheet;
+
+public class TestMarksModelDel {
+	
+	public static void main(String[] args) throws Exception {
+
+		testDelete();
+
+	}
+
+	public static void testDelete() throws Exception {
+
+		Marksheetbean bean = new Marksheetbean();
+	
+		bean.setRno("101Rays");
+		
+
+		MarksheetModelAd model = new MarksheetModelAd();
+		model.add(bean);
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package Marksheet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class MarksheetModelUp {
+	
+	public void update(Marksheetbean bean) throws Exception {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays","root","root");
+		
+		conn.setAutoCommit(false);
+		
+		PreparedStatement ps = conn.prepareStatement("UPDATE MARKSHEET SET FNAME=? WHERE ID=?");
+		
+		ps.setString(1, bean.getFname());
+		ps.setInt(2, bean.getId());
+		int i = ps.executeUpdate();
+		System.out.println("Updated");
+		
+		conn.commit();
+		conn.close();
+		ps.close();
+	}
+
+}

@@ -1,0 +1,24 @@
+package Marksheet;
+
+public class TestMarksModelUp {
+
+	public static void main(String[] args) throws Exception {
+
+		testUpdate();
+	}
+
+	public static void testUpdate() throws Exception {
+
+		Marksheetbean bean = new Marksheetbean();
+		bean.setId(12);
+		bean.setRno("102Rays");
+		bean.setFname("Sanaya");
+		bean.setLname("Sharma");
+		bean.setPhy(75);
+		bean.setChe(78);
+		bean.setMat(80);
+		
+		MarksheetModelUp model = new MarksheetModelUp();
+		model.update(bean);
+	}
+}

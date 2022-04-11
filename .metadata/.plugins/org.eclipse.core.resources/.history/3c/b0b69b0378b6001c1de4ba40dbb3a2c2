@@ -1,0 +1,58 @@
+package Marksheet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class TestJDBC {
+	
+	public static void main(String[] args) {
+	    
+		for (int i = 1; i <= 40; i++) {
+			testJDBC();
+		}
+	
+
+	}
+
+	private static void testJDBC() {
+		Class.forName("com.mysql.jdbc.Driver");
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays", "root", "root");
+
+		conn.setAutoCommit(false);
+
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM MARKSHEET");
+
+		ResultSet rs = ps.executeQuery();
+
+		ArrayList<Marksheetbean> list = new ArrayList<Marksheetbean>();
+		Marksheetbean bean = null;
+
+		while (rs.next()) {
+
+			bean = new Marksheetbean();
+
+			bean.setId(rs.getInt(1));
+			bean.setRno(rs.getString(2));
+			bean.setFname(rs.getString(3));
+			bean.setLname(rs.getString(4));
+			bean.setPhy(rs.getInt(5));
+			bean.setChe(rs.getInt(6));
+			bean.setMat(rs.getInt(7));
+			list.add(bean);
+		}
+
+		conn.commit();
+		ps.close();
+		conn.close();
+		
+
+	}
+}
+
+
+
+}

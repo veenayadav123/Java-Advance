@@ -1,0 +1,21 @@
+package advance_1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Select_ {
+
+	public static void main(String[] args) throws Exception {
+
+		testSelect();
+	}
+
+	public static void testSelect() throws Exception {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays","root","root");
+		
+		Statement stmt = conn
+	}
+}

@@ -1,0 +1,132 @@
+package Marksheet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class MarksheetModel {
+
+	public void add(Marksheetbean bean) throws Exception {
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays", "root", "root");
+		conn.setAutoCommit(false);
+		PreparedStatement ps = conn.prepareStatement("INSERT INTO MARKSHEET VALUES(?,?,?,?,?,?,?)");
+
+		ps.setInt(1, bean.getId());
+		ps.setString(2, bean.getRno());
+		ps.setString(3, bean.getFname());
+		ps.setString(4, bean.getLname());
+		ps.setInt(5, bean.getPhy());
+		ps.setInt(6, bean.getChe());
+		ps.setInt(7, bean.getMat());
+
+		int i = ps.executeUpdate();
+		System.out.println(i + " Inserted");
+
+		conn.commit();
+		conn.close();
+		ps.close();
+	}
+
+	public void update(Marksheetbean bean) throws Exception {
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays", "root", "root");
+
+		conn.setAutoCommit(false);
+
+		PreparedStatement ps = conn.prepareStatement("UPDATE MARKSHEET SET FNAME=? WHERE ID=?");
+
+		ps.setString(1, bean.getFname());
+		ps.setInt(2, bean.getId());
+		int i = ps.executeUpdate();
+		System.out.println(i + " Updated");
+
+		conn.commit();
+		conn.close();
+		ps.close();
+	}
+
+	public void delete(Marksheetbean bean) throws Exception {
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays", "root", "root");
+		conn.setAutoCommit(false);
+		PreparedStatement ps = conn.prepareStatement("DELETE FROM MARKSHEET WHERE ROLL_No=?");
+
+		ps.setString(1, bean.getRno());
+
+		int i = ps.executeUpdate();
+		System.out.println(i + "Deleted");
+
+		conn.commit();
+		conn.close();
+		ps.close();
+	}
+
+	public void get(Marksheetbean bean) throws Exception {
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays", "root", "root");
+
+		conn.setAutoCommit(false);
+
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM MARKSHEET WHERE ROLL_NO=?");
+
+		ps.setString(1, bean.getRno());
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			System.out.print(rs.getInt(1));
+			System.out.print("\t" + rs.getString(2));
+			System.out.print("\t" + rs.getString(3));
+			System.out.print("\t" + rs.getString(4));
+			System.out.print("\t" + rs.getInt(5));
+			System.out.print("\t" + rs.getInt(6));
+			System.out.println("\t" + rs.getInt(7));
+		}
+
+		conn.commit();
+		conn.close();
+		ps.close();
+	}
+
+	public void search(Marksheetbean bean) throws Exception {
+
+		Class.forName("com.mysql.jdbc.Driver").newInstance();
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays", "root", "root");
+
+		conn.setAutoCommit(false);
+
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM MARKSHEET");
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			System.out.print(rs.getInt(1));
+			System.out.print("\t" + rs.getString(2));
+			System.out.print("\t" + rs.getString(3));
+			System.out.print("\t" + rs.getString(4));
+			System.out.print("\t" + rs.getInt(5));
+			System.out.print("\t" + rs.getInt(6));
+			System.out.println("\t" + rs.getInt(7));
+
+		}
+
+		conn.commit();
+		ps.close();
+		conn.close();
+		
+	}
+
+}

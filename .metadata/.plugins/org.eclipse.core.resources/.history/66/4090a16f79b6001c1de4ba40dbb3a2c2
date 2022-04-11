@@ -1,0 +1,48 @@
+package Marksheet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class TestJDBC {
+	
+	public static void main(String[] args) {
+	    
+		for (int i = 1; i <= 40; i++) {
+			testJDBC();
+		}
+	
+
+	}
+
+	private static void testJDBC() {
+		Connection conn = null;
+		conn = JDBCDataSource.getConnection();
+
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM MARKSHEET");
+
+		ResultSet rs = ps.executeQuery();
+
+		
+		Marksheetbean bean = null;
+
+		while (rs.next()) {
+			
+			System.out.println(rs.getInt(1));
+			System.out.println(rs.getString(2));
+			System.out.println(rs.getString(3));
+
+			
+		}
+
+		
+		ps.close();
+		
+		
+
+	}
+}
+
+}

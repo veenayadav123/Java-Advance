@@ -1,0 +1,29 @@
+package PS_CRUD;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import com.mysql.jdbc.PreparedStatement;
+
+public class TestPS_Update {
+	
+	public static void main(String[] args) throws Exception {
+		
+		testUpdate();
+	}
+	
+	public static void testUpdate() throws Exception {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays","root","root");
+		
+		PreparedStatement ps = (PreparedStatement) conn.prepareStatement("UPDATE EMPLOYEE SET SALARY=2000 WHERE ID=2");
+		
+		int i = ps.executeUpdate();
+		
+		conn.close();
+		ps.close();
+	}
+
+}

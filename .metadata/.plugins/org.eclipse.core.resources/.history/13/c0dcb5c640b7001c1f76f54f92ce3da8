@@ -1,0 +1,15 @@
+package in.co.rays.rb;
+
+import java.util.ResourceBundle;
+
+public class Locale1 {
+
+	
+	public static void main(String[] args) {
+		
+		ResourceBundle rb = ResourceBundle.getBundle("in.co.rb.hindi_Contry");
+		
+		Locale l = new Locale("hi","IN");
+	
+	}
+}

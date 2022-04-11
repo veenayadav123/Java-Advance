@@ -1,0 +1,31 @@
+package Transec_Handling;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class Test_Add2 {
+	
+	public static void main(String[] args) throws Exception {
+		
+		testAdd();
+	}
+	public static void testAdd() throws Exception {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays","root","root");
+		
+		conn.setAutoCommit(false);
+		
+		PreparedStatement ps = conn.prepareStatement("INSERT INTO EMPLOYEE VALUES(23,'RIYA','VERMA',20000,4)");
+		
+		int i = ps.executeUpdate();
+		
+		conn.commit();
+		
+		conn.close();
+		ps.close();
+	}
+
+}

@@ -1,0 +1,44 @@
+package Marksheet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class TestJDBC {
+	
+	public static void main(String[] args) throws Exception {
+	    
+		for (int i = 1; i <= 40; i++) {
+			testSearch();
+		}
+	
+
+	}
+
+	public static void testSearch() throws Exception {
+
+		MarksheetModel model = new MarksheetModel();
+		List list = model.search();
+		Iterator<Marksheetbean> it = list.iterator();
+
+		while (it.hasNext()) {
+			Marksheetbean bean = it.next();
+			System.out.print(bean.getId());
+			System.out.print(" " + bean.getRno());
+			System.out.print(" " + bean.getFname());
+			System.out.print(" " + bean.getLname());
+			System.out.print(" " + bean.getPhy());
+			System.out.print(" " + bean.getChe());
+			System.out.println(" " + bean.getMat());
+		}
+
+	}
+}
+
+
+
+}

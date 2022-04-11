@@ -1,0 +1,11 @@
+package Marksheet;
+
+public class Jdbc_Data_Source {
+	
+	public final class JdbcDataSource{
+		
+		//JDBC Datasource static object
+		private static final JdbcDataSource jds=null;
+	}
+
+}
