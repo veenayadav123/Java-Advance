@@ -1,0 +1,32 @@
+package in.co.rays.test;
+
+import java.util.Iterator;
+import java.util.List;
+
+import in.co.rays.bean.MarksheetBean;
+import in.co.rays.bean.Registrationbean;
+import in.co.rays.model.MarksheetModel;
+import in.co.rays.model.RegistrationModel;
+
+public class TestRegistrationModel {
+
+	public static void main(String[] args) throws Exception {
+
+		RegistrationModel model = new RegistrationModel();
+		List list = model.authenticate("101");
+		Iterator<MarksheetBean> it = list.iterator();
+
+		while (it.hasNext()) {
+
+			MarksheetBean bean = it.next();
+			System.out.print(bean.getId());
+			System.out.print(" " + bean.getRno());
+			System.out.print(" " + bean.getFname());
+			System.out.print(" " + bean.getLname());
+			System.out.print(" " + bean.getPhy());
+			System.out.print(" " + bean.getChe());
+			System.out.println(" " + bean.getMat());
+		}
+
+	}
+}

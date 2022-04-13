@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registered Data</title>
+</head>
+<body>
+	<form>
+		<table>
+			<%
+				String fname = request.getParameter("fname");
+				String lname = request.getParameter("lname");
+				String dob = request.getParameter("dob");
+				String email = request.getParameter("email");
+				String pwd = request.getParameter("pwd");
+				String gender = request.getParameter("gender");
+
+				if (request.getParameter("ckt") != null) {
+					out.print("Cricket");
+				} else if (request.getParameter("hky") != null) {
+					out.print("Hockey");
+				} else if (request.getParameter("ches") != null) {
+			      out.print("Chess");
+				}
+
+				String mobile = request.getParameter("mob");
+				String add = request.getParameter("add");
+
+				out.println(fname + " " + lname);
+				out.println(dob + " " + email + " " + " " + pwd + " " + gender + " " + mobile + " " + add);
+			%>
+		</table>
+	</form>
+</body>
+</html>

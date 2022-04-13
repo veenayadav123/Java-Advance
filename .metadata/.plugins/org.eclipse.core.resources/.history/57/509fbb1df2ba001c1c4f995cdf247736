@@ -1,0 +1,18 @@
+package in.co.rays.test;
+
+import java.util.Iterator;
+import java.util.List;
+import in.co.rays.bean.Registrationbean;
+import in.co.rays.model.RegistrationModel;
+
+public class TestRegistrationModel {
+
+	public static void main(String[] args) throws Exception {
+
+		RegistrationModel model = new RegistrationModel();
+		 
+		model.authenticate();
+
+
+	}
+}

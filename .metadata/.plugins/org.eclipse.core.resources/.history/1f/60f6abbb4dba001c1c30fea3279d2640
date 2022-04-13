@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>Loginctl</servlet-name>
+  	<display-name>Loginctl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.Loginctl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>HelloWorld</servlet-name>
+  	<display-name>HelloWorld</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.HelloWorld</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Hello</servlet-name>
+  	<display-name>Hello</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.Hello</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Hello1</servlet-name>
+  	<display-name>Hello1</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.Hello1</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginCtl</servlet-name>
+  	<display-name>LoginCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.ctl.LoginCtl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Loginctl</servlet-name>
+  	<url-pattern>/Loginctl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HelloWorld</servlet-name>
+  	<url-pattern>/HelloWorld</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Hello</servlet-name>
+  	<url-pattern>/Hello</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Hello1</servlet-name>
+  	<url-pattern>/Hello1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginCtl</servlet-name>
+  	<url-pattern>/LoginCtl</url-pattern>
+  </servlet-mapping>
+</web-app>
